@@ -13,10 +13,7 @@ class Admin(Person):
         super().__init__(name, code)
         self.exp = exp
 
-class Employee(Account, Admin):
-    def __init__(self, name, code, pay, exp):
-        super().__init__(name, code, pay)
-        self.exp = exp
+class Employee(Account, Admin): def __init__(self, name, code, pay, exp): # Initialize both Account and Admin Account.__init__(self, name, code, pay) Admin.__init__(self, name, code, exp)
         
     def get_details(self):
         print(f"Name: {self.name}")
